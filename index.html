@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rain Hart | Financial Economics Student</title>
+  <meta name="description" content="Rain Hart - Financial Economics student at the University of Toronto with experience in investment research, financial modeling, and data analysis." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121933;
+      --text: #eef2ff;
+      --muted: #b8c0e0;
+      --accent: #89a7ff;
+      --line: rgba(255,255,255,0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #0f1730 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(960px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(11,16,32,0.75);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-card, .section-card {
+      background: rgba(18,25,51,0.86);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 1.05rem;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.5rem 0.85rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #08112b;
+      border-color: transparent;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 1rem 0 1.25rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .item {
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .item:first-child { border-top: none; padding-top: 0; }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.45rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0;
+    }
+
+    .skills {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .two-col { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.5rem; }
+      .hero-card, .section-card { padding: 1.3rem; }
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <strong>Rain Hart</strong>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <p class="meta">Toronto, ON</p>
+        <h1>Financial Economics student with investing and data analysis experience.</h1>
+        <p class="subtitle">
+          I’m Rain Hart, a University of Toronto student specializing in Financial Economics. I’m interested in investment research, financial modeling, macroeconomics, and data-driven decision-making.
+        </p>
+        <div class="pill-row">
+          <span class="pill">University of Toronto</span>
+          <span class="pill">Financial Economics</span>
+          <span class="pill">CFA Level I Passed</span>
+          <span class="pill">Python • SQL • Excel • Stata</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:Rainhart6713@gmail.com">Email Me</a>
+          <a class="btn" href="https://linkedin.com/in/rain-hart" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-card">
+        <h2>About</h2>
+        <p>
+          I’m building a foundation at the intersection of economics, markets, and analytical tools. My academic work includes strong performance in Financial Economics, and my practical experience includes hedge fund research, workflow automation, and macro research leadership in a student investment setting.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-card">
+        <h2>Experience</h2>
+        <div class="item">
+          <h3>Junior Analyst — Caravel Capital</h3>
+          <p class="meta">Summer 2024 · Nassau, Bahamas</p>
+          <ul>
+            <li>Produced 30+ daily briefs for a multi-strategy hedge fund environment.</li>
+            <li>Coordinated client meetings with major banks.</li>
+            <li>Built Excel workflows to automate data collection.</li>
+            <li>Researched AI integration opportunities and presented findings to senior team members.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-card grid two-col">
+        <div>
+          <h2>Education</h2>
+          <div class="item">
+            <h3>University of Toronto</h3>
+            <p class="meta">Specialist in Financial Economics · Sep 2023 – Jun 2026 · Toronto, ON</p>
+            <ul>
+              <li>Honours Bachelor of Science</li>
+              <li>GPA: 3.86/4.0</li>
+              <li>2025 Dean’s List Scholar</li>
+              <li>Financial Economics I: 91%</li>
+              <li>Financial Economics II: 97%</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>IE University</h3>
+            <p class="meta">Bachelor in Economics · Sep 2022 – Jan 2023 · Segovia, Spain</p>
+            <p>9.28/10 according to the Spanish grading scale.</p>
+          </div>
+          <div class="item">
+            <h3>Lyford Cay International School</h3>
+            <p class="meta">IB Diploma · Sep 2020 – May 2022 · Lyford Cay, Bahamas</p>
+            <ul>
+              <li>Class Valedictorian</li>
+              <li>IB Grade: 41/45</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>Credentials</h2>
+          <div class="item">
+            <h3>Chartered Financial Analyst (CFA)</h3>
+            <p class="meta">January 2026 · Toronto, ON</p>
+            <ul>
+              <li>Passed Level I</li>
+              <li>Enrolled in Level II</li>
+              <li>Focus areas include portfolio management, risk management, and financial modeling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-card">
+        <h2>Projects & Leadership</h2>
+        <div class="item">
+          <h3>North America Managing Director — Vertige Investment Group</h3>
+          <p class="meta">May 2024 – Jun 2024 · Toronto, ON</p>
+          <ul>
+            <li>Led a team of 4 in producing macroeconomics research on North America.</li>
+            <li>Delivered industry-style equity market insights within a University of Toronto student organization.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-card grid two-col">
+        <div>
+          <h2>Skills</h2>
+          <div class="skills">
+            <span class="pill">Python</span>
+            <span class="pill">NumPy</span>
+            <span class="pill">Pandas</span>
+            <span class="pill">Matplotlib</span>
+            <span class="pill">SciPy</span>
+            <span class="pill">Statsmodels</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Excel</span>
+            <span class="pill">Stata</span>
+            <span class="pill">Financial Modeling</span>
+            <span class="pill">Econometric Analysis</span>
+            <span class="pill">Data Cleaning</span>
+          </div>
+        </div>
+        <div>
+          <h2>Languages & Interests</h2>
+          <div class="skills">
+            <span class="pill">Spanish</span>
+            <span class="pill">French</span>
+            <span class="pill">English</span>
+            <span class="pill">Rock Climbing</span>
+            <span class="pill">Formula 1</span>
+            <span class="pill">Monetary Policy</span>
+            <span class="pill">Reading</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-card">
+        <h2>Contact</h2>
+        <p>I’m open to internships, analyst roles, and conversations in finance, investing, and economics.</p>
+        <p>
+          Email: <a href="mailto:Rainhart6713@gmail.com">Rainhart6713@gmail.com</a><br />
+          LinkedIn: <a href="https://linkedin.com/in/rain-hart" target="_blank" rel="noreferrer">linkedin.com/in/rain-hart</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> Rain Hart</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
