@@ -69,6 +69,55 @@
       box-shadow: 0 18px 60px rgba(0,0,0,0.25);
     }
 
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .work-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.25rem;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+
+    .mini-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .section-note {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .paper-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .hero-card, .section-card {
+      background: rgba(18,25,51,0.86);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+    }
+
     h1, h2, h3, p { margin-top: 0; }
     h1 {
       font-size: clamp(2.4rem, 5vw, 4rem);
@@ -171,7 +220,11 @@
     }
 
     @media (max-width: 760px) {
-      .two-col { grid-template-columns: 1fr; }
+      .two-col, .work-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.5rem; }
+      .hero-card, .section-card { padding: 1.3rem; }
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+    }
       .hero { padding-top: 3.5rem; }
       .hero-card, .section-card { padding: 1.3rem; }
       .nav-inner { align-items: flex-start; flex-direction: column; }
@@ -184,9 +237,11 @@
       <strong>Rain Hart</strong>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
+        <a href="#papers">Papers</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
@@ -210,7 +265,7 @@
         <div class="cta-row">
           <a class="btn primary" href="mailto:Rainhart6713@gmail.com">Email Me</a>
           <a class="btn" href="https://linkedin.com/in/rain-hart" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="#work">See My Work</a>
         </div>
       </div>
     </section>
@@ -221,6 +276,31 @@
         <p>
           I’m building a foundation at the intersection of economics, markets, and analytical tools. My academic work includes strong performance in Financial Economics, and my practical experience includes hedge fund research, workflow automation, and macro research leadership in a student investment setting.
         </p>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-card">
+        <h2>Work</h2>
+        <p class="section-note">A quick way for recruiters to jump straight to the kind of work they want to see.</p>
+        <div class="work-grid">
+          <div class="work-card">
+            <span class="tag">Projects</span>
+            <h3>Technical, research, and investment projects</h3>
+            <p>Use this section to highlight GitHub repositories, financial models, data analysis, presentations, or other hands-on work.</p>
+            <div class="mini-links">
+              <a class="btn" href="#projects">Open Projects</a>
+            </div>
+          </div>
+          <div class="work-card">
+            <span class="tag">Papers</span>
+            <h3>Academic writing and co-authored papers</h3>
+            <p>Use this section for course papers, research writeups, and collaborative work. You can link a PDF, abstract, or GitHub repository for each one.</p>
+            <div class="mini-links">
+              <a class="btn" href="#papers">Open Papers</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -286,14 +366,63 @@
 
     <section id="projects">
       <div class="section-card">
-        <h2>Projects & Leadership</h2>
+        <h2>Projects</h2>
+        <p class="section-note">Make each project easy to scan. Add a short description, what you built, and a link to the code or deliverable.</p>
         <div class="item">
-          <h3>North America Managing Director — Vertige Investment Group</h3>
-          <p class="meta">May 2024 – Jun 2024 · Toronto, ON</p>
+          <h3>Featured Project</h3>
+          <p class="meta">Add date · Add context</p>
+          <p>
+            Replace this with a short summary of the project, what problem it solved, and what tools you used.
+          </p>
           <ul>
-            <li>Led a team of 4 in producing macroeconomics research on North America.</li>
-            <li>Delivered industry-style equity market insights within a University of Toronto student organization.</li>
+            <li>Example: Built a data pipeline, dashboard, or financial model.</li>
+            <li>Example: Analyzed a dataset and presented key findings.</li>
+            <li>Example: Worked independently or with a team.</li>
           </ul>
+          <div class="paper-actions">
+            <a class="btn" href="#">Add GitHub Link</a>
+            <a class="btn" href="#">Add Demo or PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="papers">
+      <div class="section-card">
+        <h2>Papers</h2>
+        <p class="section-note">You can host each PDF directly in your GitHub Pages repo and link it here so recruiters can read it in one click.</p>
+
+        <div class="item">
+          <h3>Intended and Unintended Effects of Vaping Tax Across Age Groups: Evidence from British Columbia</h3>
+          <p class="meta">Co-authored paper · University of Toronto</p>
+          <p>
+            An empirical paper studying how British Columbia’s vaping tax affected vaping and smoking behavior across age groups using Canadian survey data and difference-in-differences methods.
+          </p>
+          <div class="paper-actions">
+            <a class="btn" href="#">Add PDF Link</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <h3>Do Central Bank Reserves Stabilize Markets? A Fixed Effects Analysis between CDS and Forex Reserves</h3>
+          <p class="meta">Co-authored paper · ECO 375 Applied Econometrics</p>
+          <p>
+            A co-authored econometrics paper analyzing the relationship between sovereign CDS spreads and foreign exchange reserves across advanced and emerging economies.
+          </p>
+          <div class="paper-actions">
+            <a class="btn" href="#">Add PDF Link</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <h3>Your Next Paper Title</h3>
+          <p class="meta">Solo or co-authored · Add course, journal, or context</p>
+          <p>
+            Duplicate this block whenever you want to add another paper. Include a one- or two-sentence summary and a PDF link.
+          </p>
+          <div class="paper-actions">
+            <a class="btn" href="#">Add PDF Link</a>
+          </div>
         </div>
       </div>
     </section>
