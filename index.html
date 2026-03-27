@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rain Hart | Economics, Research, and Finance</title>
+  <title>Rain Hart | Economics and Finance</title>
   <meta name="description" content="Rain Hart is a University of Toronto Financial Economics student with experience in investment research, econometrics, and data analysis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1020;
-      --card: #121933;
-      --text: #eef2ff;
-      --muted: #b8c0e0;
-      --accent: #89a7ff;
-      --line: rgba(255,255,255,0.12);
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #e5e7eb;
+      --accent: #1d4ed8;
+      --accent-dark: #1e3a8a;
+      --max: 960px;
     }
 
     * { box-sizing: border-box; }
@@ -20,34 +25,44 @@
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: linear-gradient(180deg, #0b1020 0%, #0f1730 100%);
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     a:hover { text-decoration: underline; }
 
     .container {
-      width: min(960px, calc(100% - 2rem));
+      width: min(var(--max), calc(100% - 2rem));
       margin: 0 auto;
     }
 
     .nav {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
-      backdrop-filter: blur(10px);
-      background: rgba(11,16,32,0.75);
-      border-bottom: 1px solid var(--line);
-      z-index: 10;
+      z-index: 20;
     }
 
     .nav-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 1rem 0;
       gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
     }
 
     .nav-links {
@@ -58,189 +73,187 @@
     }
 
     .hero {
-      padding: 5rem 0 3rem;
+      padding: 5rem 0 2.5rem;
     }
 
-    .hero-card, .section-card {
-      background: rgba(18,25,51,0.86);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 2rem;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
-    }
-
-    .work-grid {
+    .hero-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 1.5rem;
+      align-items: stretch;
     }
 
-    .work-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 1.25rem;
-      background: rgba(255,255,255,0.03);
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.65rem;
-    }
-
-    .mini-links {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-
-    .section-note {
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .paper-actions {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-
-    .hero-card, .section-card {
-      background: rgba(18,25,51,0.86);
+    .card {
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 22px;
       padding: 2rem;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+      box-shadow: 0 10px 30px rgba(17,24,39,0.05);
     }
 
     h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      line-height: 1.05;
-      margin-bottom: 0.75rem;
-    }
 
-    h2 {
-      font-size: 1.5rem;
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
       margin-bottom: 1rem;
     }
 
-    .subtitle {
-      color: var(--muted);
-      max-width: 720px;
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
       font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 44rem;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .meta-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
     }
 
     .pill-row {
       display: flex;
-      gap: 0.75rem;
       flex-wrap: wrap;
-      margin: 1.25rem 0 1.5rem;
+      gap: 0.75rem;
+      margin: 1.4rem 0 1.6rem;
     }
 
     .pill {
+      display: inline-flex;
+      align-items: center;
       border: 1px solid var(--line);
+      background: #f8fafc;
+      color: #1f2937;
+      padding: 0.55rem 0.85rem;
       border-radius: 999px;
-      padding: 0.5rem 0.85rem;
-      color: var(--muted);
       font-size: 0.92rem;
-      background: rgba(255,255,255,0.03);
     }
 
-    .cta-row {
+    .actions {
       display: flex;
-      gap: 0.9rem;
       flex-wrap: wrap;
-      margin-top: 1.5rem;
+      gap: 0.85rem;
+      margin-top: 1.25rem;
     }
 
     .btn {
       display: inline-block;
-      padding: 0.85rem 1.1rem;
+      padding: 0.9rem 1.1rem;
       border-radius: 12px;
       border: 1px solid var(--line);
+      background: var(--surface);
       color: var(--text);
-      background: rgba(255,255,255,0.05);
+      font-weight: 600;
+      text-decoration: none;
     }
+
+    .btn:hover { text-decoration: none; }
 
     .btn.primary {
       background: var(--accent);
-      color: #08112b;
-      border-color: transparent;
-      font-weight: 700;
+      color: white;
+      border-color: var(--accent);
     }
 
     section {
-      padding: 1rem 0 1.25rem;
+      padding: 0 0 1.25rem;
     }
 
-    .grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .two-col {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(17,24,39,0.05);
     }
 
     .item {
-      padding: 1rem 0;
+      padding: 1.2rem 0;
       border-top: 1px solid var(--line);
     }
 
-    .item:first-child { border-top: none; padding-top: 0; }
+    .item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
 
     .meta {
       color: var(--muted);
       font-size: 0.95rem;
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.6rem;
     }
 
-    ul {
-      padding-left: 1.1rem;
-      margin-bottom: 0;
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
     }
 
     .skills {
       display: flex;
-      gap: 0.6rem;
       flex-wrap: wrap;
+      gap: 0.65rem;
     }
 
-    .footer {
+    ul {
+      margin: 0.65rem 0 0;
+      padding-left: 1.2rem;
+    }
+
+    footer {
       padding: 2rem 0 3rem;
       color: var(--muted);
       font-size: 0.95rem;
       text-align: center;
     }
 
-    @media (max-width: 760px) {
-      .two-col, .work-grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 3.5rem; }
-      .hero-card, .section-card { padding: 1.3rem; }
-      .nav-inner { align-items: flex-start; flex-direction: column; }
-    }
-      .hero { padding-top: 3.5rem; }
-      .hero-card, .section-card { padding: 1.3rem; }
-      .nav-inner { align-items: flex-start; flex-direction: column; }
+    @media (max-width: 820px) {
+      .hero-grid, .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3.25rem;
+      }
+
+      .card, .section-card {
+        padding: 1.4rem;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <strong>Rain Hart</strong>
+      <div class="brand">Rain Hart</div>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
         <a href="#papers">Papers</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -250,22 +263,45 @@
 
   <main class="container">
     <section class="hero">
-      <div class="hero-card">
-        <p class="meta">Toronto, ON</p>
-        <h1>Rain Hart</h1>
-        <p class="subtitle">
-          University of Toronto Financial Economics student interested in investment research, macroeconomics, econometrics, and data-driven decision-making.
-        </p>
-        <div class="pill-row">
-          <span class="pill">Financial Economics</span>
-          <span class="pill">Investment Research</span>
-          <span class="pill">Econometrics</span>
-          <span class="pill">Python • SQL • Excel • Stata</span>
+      <div class="hero-grid">
+        <div class="card">
+          <p class="meta">Toronto, ON</p>
+          <h1>Rain Hart</h1>
+          <p class="lead">
+            University of Toronto Financial Economics student with interests in investment research, macroeconomics, econometrics, and data-driven analysis.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Financial Economics</span>
+            <span class="pill">Investment Research</span>
+            <span class="pill">Econometrics</span>
+            <span class="pill">Python · SQL · Excel · Stata</span>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="mailto:Rainhart6713@gmail.com">Email</a>
+            <a class="btn" href="https://linkedin.com/in/rain-hart" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="#papers">View Papers</a>
+          </div>
         </div>
-        <div class="cta-row">
-          <a class="btn primary" href="mailto:Rainhart6713@gmail.com">Email Me</a>
-          <a class="btn" href="https://linkedin.com/in/rain-hart" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="#work">See My Work</a>
+
+        <div class="card">
+          <div class="meta-list">
+            <div>
+              <div class="meta-label">Education</div>
+              <div>University of Toronto</div>
+            </div>
+            <div>
+              <div class="meta-label">Program</div>
+              <div>Specialist in Financial Economics</div>
+            </div>
+            <div>
+              <div class="meta-label">Academic Record</div>
+              <div>GPA 3.86 · Dean’s List Scholar</div>
+            </div>
+            <div>
+              <div class="meta-label">Credentials</div>
+              <div>CFA Level I Passed</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -274,32 +310,8 @@
       <div class="section-card">
         <h2>About</h2>
         <p>
-          I am a Financial Economics student at the University of Toronto with experience across hedge fund research, macroeconomic analysis, and data-driven problem solving. My interests sit at the intersection of markets, policy, and quantitative analysis, and I enjoy turning complex questions into clear, useful conclusions.
+          I am a Financial Economics student at the University of Toronto with experience across hedge fund research, macroeconomic analysis, and applied quantitative work. I am especially interested in how economic ideas, market behaviour, and empirical methods can be used to answer practical questions clearly and rigorously.
         </p>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="section-card">
-        <h2>Selected Work</h2>
-        <div class="work-grid">
-          <div class="work-card">
-            <span class="tag">Projects</span>
-            <h3>Applied and technical work</h3>
-            <p>Selected projects in research, analysis, and technical problem solving.</p>
-            <div class="mini-links">
-              <a class="btn" href="#projects">View Projects</a>
-            </div>
-          </div>
-          <div class="work-card">
-            <span class="tag">Papers</span>
-            <h3>Academic writing</h3>
-            <p>Research papers and econometrics work, including co-authored projects.</p>
-            <div class="mini-links">
-              <a class="btn" href="#papers">View Papers</a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -307,27 +319,35 @@
       <div class="section-card">
         <h2>Experience</h2>
         <div class="item">
-          <h3>Junior Analyst — Caravel Capital</h3>
+          <h3>Junior Analyst · Caravel Capital</h3>
           <p class="meta">Summer 2024 · Nassau, Bahamas</p>
           <ul>
-            <li>Produced 30+ daily briefs for a multi-strategy hedge fund environment.</li>
-            <li>Coordinated client meetings with major banks.</li>
-            <li>Built Excel workflows to automate data collection.</li>
+            <li>Produced more than 30 daily briefs in a multi-strategy hedge fund environment.</li>
+            <li>Supported client meeting coordination with major banks.</li>
+            <li>Built Excel workflows to improve and automate data collection.</li>
             <li>Researched AI integration opportunities and presented findings to senior team members.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>North America Managing Director · Vertige Investment Group</h3>
+          <p class="meta">May 2024 – Jun 2024 · Toronto, ON</p>
+          <ul>
+            <li>Led a team of four in producing macroeconomic research on North America.</li>
+            <li>Delivered market-focused analysis within a University of Toronto student investment organization.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="education">
-      <div class="section-card grid two-col">
+      <div class="section-card two-col">
         <div>
           <h2>Education</h2>
           <div class="item">
             <h3>University of Toronto</h3>
-            <p class="meta">Specialist in Financial Economics · Sep 2023 – Jun 2026 · Toronto, ON</p>
+            <p class="meta">Honours Bachelor of Science · Sep 2023 – Jun 2026</p>
             <ul>
-              <li>Honours Bachelor of Science</li>
+              <li>Specialist in Financial Economics</li>
               <li>GPA: 3.86/4.0</li>
               <li>2025 Dean’s List Scholar</li>
               <li>Financial Economics I: 91%</li>
@@ -337,7 +357,7 @@
           <div class="item">
             <h3>IE University</h3>
             <p class="meta">Bachelor in Economics · Sep 2022 – Jan 2023 · Segovia, Spain</p>
-            <p>9.28/10 according to the Spanish grading scale.</p>
+            <p>9.28/10 on the Spanish grading scale.</p>
           </div>
           <div class="item">
             <h3>Lyford Cay International School</h3>
@@ -351,34 +371,9 @@
         <div>
           <h2>Credentials</h2>
           <div class="item">
-            <h3>Chartered Financial Analyst (CFA)</h3>
-            <p class="meta">January 2026 · Toronto, ON</p>
-            <ul>
-              <li>Passed Level I</li>
-              <li>Enrolled in Level II</li>
-              <li>Focus areas include portfolio management, risk management, and financial modeling</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="section-card">
-        <h2>Projects</h2>
-        <div class="item">
-          <h3>Featured Project</h3>
-          <p class="meta">GitHub project</p>
-          <p>
-            Add your strongest project here with a short description of the problem, your contribution, and the result. A concise summary works better than a long explanation.
-          </p>
-          <ul>
-            <li>What you built or analyzed</li>
-            <li>What tools or methods you used</li>
-            <li>What the result or takeaway was</li>
-          </ul>
-          <div class="paper-actions">
-            <a class="btn" href="#">View on GitHub</a>
+            <h3>Chartered Financial Analyst Program</h3>
+            <p class="meta">Passed CFA Level I</p>
+            <p>Currently enrolled in Level II, with interests in portfolio management, risk management, and financial modelling.</p>
           </div>
         </div>
       </div>
@@ -387,25 +382,23 @@
     <section id="papers">
       <div class="section-card">
         <h2>Papers</h2>
-
         <div class="item">
           <h3>Intended and Unintended Effects of Vaping Tax Across Age Groups: Evidence from British Columbia</h3>
           <p class="meta">Co-authored paper · University of Toronto</p>
           <p>
             An empirical paper examining how British Columbia’s vaping tax affected vaping and smoking behaviour across age groups using Canadian survey data and difference-in-differences methods.
           </p>
-          <div class="paper-actions">
+          <div class="actions">
             <a class="btn" href="ECO446_Final_paper.pdf" target="_blank" rel="noreferrer">Read PDF</a>
           </div>
         </div>
-
         <div class="item">
           <h3>Do Central Bank Reserves Stabilize Markets? A Fixed Effects Analysis between CDS and Forex Reserves</h3>
           <p class="meta">Co-authored paper · ECO 375 Applied Econometrics</p>
           <p>
             A co-authored econometrics paper studying the relationship between sovereign CDS spreads and foreign exchange reserves across advanced and emerging economies.
           </p>
-          <div class="paper-actions">
+          <div class="actions">
             <a class="btn" href="ECO 375 - Final.pdf" target="_blank" rel="noreferrer">Read PDF</a>
           </div>
         </div>
@@ -413,7 +406,7 @@
     </section>
 
     <section id="skills">
-      <div class="section-card grid two-col">
+      <div class="section-card two-col">
         <div>
           <h2>Skills</h2>
           <div class="skills">
@@ -432,11 +425,11 @@
           </div>
         </div>
         <div>
-          <h2>Languages & Interests</h2>
+          <h2>Languages and Interests</h2>
           <div class="skills">
+            <span class="pill">English</span>
             <span class="pill">Spanish</span>
             <span class="pill">French</span>
-            <span class="pill">English</span>
             <span class="pill">Rock Climbing</span>
             <span class="pill">Formula 1</span>
             <span class="pill">Monetary Policy</span>
@@ -449,7 +442,7 @@
     <section id="contact">
       <div class="section-card">
         <h2>Contact</h2>
-        <p>I’m interested in internships, analyst roles, and opportunities related to finance, investing, economics, and research.</p>
+        <p>I’m interested in internships, analyst roles, and opportunities related to finance, economics, investing, and research.</p>
         <p>
           Email: <a href="mailto:Rainhart6713@gmail.com">Rainhart6713@gmail.com</a><br />
           LinkedIn: <a href="https://linkedin.com/in/rain-hart" target="_blank" rel="noreferrer">linkedin.com/in/rain-hart</a>
@@ -458,8 +451,8 @@
     </section>
   </main>
 
-  <footer class="container footer">
-    <p>© <span id="year"></span> Rain Hart · Built with GitHub Pages</p>
+  <footer class="container">
+    <p>© <span id="year"></span> Rain Hart</p>
   </footer>
 
   <script>
